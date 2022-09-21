@@ -10,7 +10,7 @@ namespace SimpleApplication_ForRefactoring
 {
     public class DataMover
     {
-        public byte[] _data;
+        private byte[] _data;
 
         public byte[] GetData(string fileName)
         {
@@ -20,6 +20,12 @@ namespace SimpleApplication_ForRefactoring
                 fs.CopyTo(ms);
                 return ms.ToArray();
             }
+        }
+
+
+        public void SetData(Encoding encoding, string data)
+        {
+            _data = encoding.GetBytes(data);
         }
 
         public void SendData(string ipAddress)

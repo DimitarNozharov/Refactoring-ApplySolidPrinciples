@@ -12,7 +12,7 @@ namespace SimpleApplication_ForRefactoring
         {
             var dataMover = new DataMover();
 
-            dataMover._data = Encoding.UTF8.GetBytes("test");
+            dataMover.SetData(Encoding.UTF8, "test");
             dataMover.SendData("192.168.0.1");
 
             dataMover.GetData("../../TextFile.txt");
