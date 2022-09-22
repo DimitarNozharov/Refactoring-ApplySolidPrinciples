@@ -43,10 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataMover.cs" />
+    <Compile Include="Services\BaseLoggerService.cs" />
+    <Compile Include="Services\ConsoleLoggerService.cs" />
+    <Compile Include="Services\DataMoverService.cs" />
     <Compile Include="LogTypes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EventViewerLoggerService.cs" />
+    <Compile Include="Services\FileLoggerService.cs" />
+    <Compile Include="Services\Interfaces\IDataGetter.cs" />
+    <Compile Include="Services\Interfaces\IDataSender.cs" />
+    <Compile Include="Services\Interfaces\IDataSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

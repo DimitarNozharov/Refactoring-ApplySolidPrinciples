@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using SimpleApplication_ForRefactoring.Services.Loggers;
+using System;
 using System.Text;
-using System.Threading.Tasks;
-
 namespace SimpleApplication_ForRefactoring
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var dataMover = new DataMover();
+            var dataMoverService = new DataMoverService();
 
-            dataMover.SetData(Encoding.UTF8, "test");
-            dataMover.SendData("192.168.0.1");
+            var consoleLoggerService = new ConsoleLoggerService();
 
-            dataMover.GetData("../../TextFile.txt");
+            dataMoverService.SetData(Encoding.UTF8, "test");
+            dataMoverService.SendData("192.168.0.1");
+            dataMoverService.GetData("../../TextFile.txt");
 
-            dataMover.LogData(LogTypes.Console, string.Empty, "test");
+            consoleLoggerService.SetLogger("test");
+
             Console.ReadKey();
         }
     }
